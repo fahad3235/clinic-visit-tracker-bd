@@ -60,5 +60,5 @@ visits. No analytics, no tracking, no network calls.
 
 ## Status
 
-Built by the MUSE Project Factory (run #156, 2026-10-27, 15:00 slot). Tests green at
+Built by the MUSE Project Factory (run #157, 2026-10-27, 15:00 slot). Tests green at
 ship time: 33/33 unit + 14/14 desktop smoke + 15/15 mobile smoke, 0 console errors.

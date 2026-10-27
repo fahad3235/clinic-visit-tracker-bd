@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinic Visit Tracker BD</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+<h1>🏥 Clinic Visit Tracker BD</h1>
+<p id="tagline"></p>
+</div></header>
+<div class="wrap">
+<div class="topbar">
+<div class="tabs">
+<button data-tab="dashboard">Dashboard</button>
+<button data-tab="visits">Visits</button>
+<button data-tab="add">Add visit</button>
+<button data-tab="data">Data</button>
+</div>
+<button id="langBtn">বাংলা</button>
+</div>
+<p id="msg" class="err" style="color:var(--green)"></p>
+<div id="dashboard"></div>
+<div id="visitsPanel" class="panel" style="display:none">
+<div class="searchbar">
+<input id="searchInput" placeholder="">
+<select id="fSpecFilter"></select>
+<select id="fStatusFilter"></select>
+<select id="sortSel">
+<option value="date-asc">Date ↑</option>
+<option value="date-desc">Date ↓</option>
+<option value="fee-desc">Fee ↓</option>
+<option value="fee-asc">Fee ↑</option>
+</select>
+</div>
+<div id="visitList"></div>
+</div>
+<div id="formPanel" class="panel" style="display:none">
+<h2 id="formTitle" style="margin-top:0"></h2>
+<div class="grid2">
+<div><label id="fDoctorLab"></label><input id="fDoctor"></div>
+<div><label id="fSpecLab"></label><select id="fSpec"></select></div>
+<div><label id="fClinicLab"></label><input id="fClinic"></div>
+<div><label id="fDateLab"></label><input id="fDate" type="date"></div>
+<div><label id="fReasonLab"></label><input id="fReason"></div>
+<div><label id="fFeeLab"></label><input id="fFee" type="number" min="0" step="0.01"></div>
+<div><label id="fStatusLab"></label><select id="fStatus">
+<option value="scheduled">Scheduled</option>
+<option value="done">Done</option>
+<option value="cancelled">Cancelled</option>
+</select></div>
+<div><label id="fFollowLab"></label><input id="fFollow" type="date"></div>
+</div>
+<p id="formErr" class="err"></p>
+<div class="row"><button class="primary" id="saveBtn"></button><button id="cancelBtn"></button></div>
+</div>
+<div id="dataPanel" class="panel" style="display:none">
+<div class="row">
+<button id="sampleBtn">Load sample</button>
+<button id="exportBtn">Export JSON</button>
+<label style="display:inline-flex;align-items:center;gap:6px">Import JSON <input id="importFile" type="file" accept=".json" style="width:auto"></label>
+<button class="danger" id="eraseBtn">Erase all</button>
+</div>
+<p style="color:var(--muted);font-size:14px">Your visits never leave this device — everything is stored in your browser's localStorage. Export a JSON backup before clearing browser data.</p>
+</div>
+</div>
+<footer id="footerText">Personal offline tracker. Not medical advice — always follow your doctor's guidance.</footer>
+<script src="logic.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
